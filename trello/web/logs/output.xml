@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20200831 00:43:31.367" rpa="false">
+<suite id="s1" name="Login-Usuario" source="C:\trello\web\tests\login-usuario.robot">
+<test id="s1-t1" name="Login correto">
+<kw name="Open Session" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200831 00:43:31.729" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200831 00:43:31.729" endtime="20200831 00:43:35.565"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:43:31.728" endtime="20200831 00:43:35.566"></status>
+</kw>
+<kw name="Dado que acesso a pagina principal e a tela de login" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:35.568" level="INFO">Opening url 'http://trello.com'</msg>
+<status status="PASS" starttime="20200831 00:43:35.567" endtime="20200831 00:43:40.379"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:43:40.379" endtime="20200831 00:43:40.414"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:40.415" level="INFO">Clicking element 'class:btn-link'.</msg>
+<status status="PASS" starttime="20200831 00:43:40.414" endtime="20200831 00:43:40.476"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:43:40.477" endtime="20200831 00:43:42.548"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:43:35.567" endtime="20200831 00:43:42.548"></status>
+</kw>
+<kw name="Quando submeto o meu email &quot;acs_tjs@hotmail.com&quot; e a senha &quot;acs03031994&quot;" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:42.551" level="INFO">Typing text 'acs_tjs@hotmail.com' into text field 'id:user'.</msg>
+<status status="PASS" starttime="20200831 00:43:42.550" endtime="20200831 00:43:43.882"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:43:43.882" endtime="20200831 00:43:44.672"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:44.672" level="INFO">Clicking element 'id:login'.</msg>
+<status status="PASS" starttime="20200831 00:43:44.672" endtime="20200831 00:43:48.313"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:43:48.314" endtime="20200831 00:43:48.823"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:48.825" level="INFO">Typing text 'acs03031994' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200831 00:43:48.824" endtime="20200831 00:43:49.026"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_ENTRAR}</arg>
+</arguments>
+<msg timestamp="20200831 00:43:49.027" level="INFO">Clicking element 'id:login-submit'.</msg>
+<status status="PASS" starttime="20200831 00:43:49.027" endtime="20200831 00:43:49.295"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:43:42.549" endtime="20200831 00:43:49.295"></status>
+</kw>
+<kw name="Então devo ser autenticado" library="keywords">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${DIV_HOME}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:43:49.296" endtime="20200831 00:44:01.979"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:43:49.296" endtime="20200831 00:44:01.979"></status>
+</kw>
+<kw name="Close Session" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200831 00:44:02.324" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200831 00:44:01.980" endtime="20200831 00:44:02.324"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200831 00:44:02.324" endtime="20200831 00:44:04.655"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:01.980" endtime="20200831 00:44:04.656"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:43:31.727" endtime="20200831 00:44:04.657" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Email incorreto">
+<kw name="Open Session" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200831 00:44:04.668" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200831 00:44:04.668" endtime="20200831 00:44:08.381"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:04.666" endtime="20200831 00:44:08.381"></status>
+</kw>
+<kw name="Dado que acesso a pagina principal e a tela de login" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:08.383" level="INFO">Opening url 'http://trello.com'</msg>
+<status status="PASS" starttime="20200831 00:44:08.382" endtime="20200831 00:44:13.079"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:13.080" endtime="20200831 00:44:13.119"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:13.119" level="INFO">Clicking element 'class:btn-link'.</msg>
+<status status="PASS" starttime="20200831 00:44:13.119" endtime="20200831 00:44:13.186"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:13.188" endtime="20200831 00:44:15.638"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:08.382" endtime="20200831 00:44:15.638"></status>
+</kw>
+<kw name="Quando submeto o email &quot;antonio&amp;yahoo.com&quot;" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:15.640" level="INFO">Typing text 'antonio&amp;yahoo.com' into text field 'id:user'.</msg>
+<status status="PASS" starttime="20200831 00:44:15.640" endtime="20200831 00:44:16.884"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200831 00:44:19.886" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200831 00:44:16.884" endtime="20200831 00:44:19.887"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:19.888" level="INFO">Clicking element 'id:login'.</msg>
+<status status="PASS" starttime="20200831 00:44:19.887" endtime="20200831 00:44:20.067"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:15.639" endtime="20200831 00:44:20.068"></status>
+</kw>
+<kw name="Então devo ver a mensagem &quot;Esse nome de usuário não tem conta&quot;" library="keywords">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${DIV_ERRO}</arg>
+<arg>${expect_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:20.070" endtime="20200831 00:44:20.352"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200831 00:44:25.354" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200831 00:44:20.352" endtime="20200831 00:44:25.354"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:20.069" endtime="20200831 00:44:25.355"></status>
+</kw>
+<kw name="Close Session" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200831 00:44:25.705" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200831 00:44:25.359" endtime="20200831 00:44:25.705"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200831 00:44:25.705" endtime="20200831 00:44:27.965"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:25.358" endtime="20200831 00:44:27.966"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:04.663" endtime="20200831 00:44:27.967" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Email não informado">
+<kw name="Open Session" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200831 00:44:27.981" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200831 00:44:27.979" endtime="20200831 00:44:31.626"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:27.977" endtime="20200831 00:44:31.627"></status>
+</kw>
+<kw name="Dado que acesso a pagina principal e a tela de login" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:31.628" level="INFO">Opening url 'http://trello.com'</msg>
+<status status="PASS" starttime="20200831 00:44:31.628" endtime="20200831 00:44:36.017"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:36.017" endtime="20200831 00:44:36.060"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:36.061" level="INFO">Clicking element 'class:btn-link'.</msg>
+<status status="PASS" starttime="20200831 00:44:36.060" endtime="20200831 00:44:36.138"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:36.138" endtime="20200831 00:44:38.199"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:31.627" endtime="20200831 00:44:38.200"></status>
+</kw>
+<kw name="Quando submeto o email &quot;${EMPTY}&quot;" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:38.203" level="INFO">Typing text '' into text field 'id:user'.</msg>
+<status status="PASS" starttime="20200831 00:44:38.202" endtime="20200831 00:44:38.269"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200831 00:44:41.272" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200831 00:44:38.269" endtime="20200831 00:44:41.272"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:41.272" level="INFO">Clicking element 'id:login'.</msg>
+<status status="PASS" starttime="20200831 00:44:41.272" endtime="20200831 00:44:41.346"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:38.201" endtime="20200831 00:44:41.346"></status>
+</kw>
+<kw name="Então devo ver a mensagem &quot;E-mail ausente&quot;" library="keywords">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${DIV_ERRO}</arg>
+<arg>${expect_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:41.347" endtime="20200831 00:44:41.386"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200831 00:44:46.388" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200831 00:44:41.386" endtime="20200831 00:44:46.388"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:41.347" endtime="20200831 00:44:46.389"></status>
+</kw>
+<kw name="Close Session" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200831 00:44:46.722" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-46.png"&gt;&lt;img src="selenium-screenshot-46.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200831 00:44:46.393" endtime="20200831 00:44:46.722"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200831 00:44:46.722" endtime="20200831 00:44:48.969"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:46.391" endtime="20200831 00:44:48.970"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:27.973" endtime="20200831 00:44:48.971" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Senha incorreta">
+<kw name="Open Session" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200831 00:44:48.983" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200831 00:44:48.982" endtime="20200831 00:44:52.620"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:48.980" endtime="20200831 00:44:52.621"></status>
+</kw>
+<kw name="Dado que acesso a pagina principal e a tela de login" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:52.623" level="INFO">Opening url 'http://trello.com'</msg>
+<status status="PASS" starttime="20200831 00:44:52.623" endtime="20200831 00:44:57.216"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:57.216" endtime="20200831 00:44:57.258"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_FAZER_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:57.258" level="INFO">Clicking element 'class:btn-link'.</msg>
+<status status="PASS" starttime="20200831 00:44:57.258" endtime="20200831 00:44:57.321"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:44:57.321" endtime="20200831 00:44:59.465"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:52.622" endtime="20200831 00:44:59.465"></status>
+</kw>
+<kw name="Quando submeto o meu email &quot;acs_tjs@hotmail.com&quot; e a senha &quot;antonio&quot;" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200831 00:44:59.467" level="INFO">Typing text 'acs_tjs@hotmail.com' into text field 'id:user'.</msg>
+<status status="PASS" starttime="20200831 00:44:59.466" endtime="20200831 00:45:00.603"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:45:00.603" endtime="20200831 00:45:01.457"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_LOGIN}</arg>
+</arguments>
+<msg timestamp="20200831 00:45:01.457" level="INFO">Clicking element 'id:login'.</msg>
+<status status="PASS" starttime="20200831 00:45:01.457" endtime="20200831 00:45:05.196"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:45:05.196" endtime="20200831 00:45:05.475"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200831 00:45:05.476" level="INFO">Typing text 'antonio' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20200831 00:45:05.475" endtime="20200831 00:45:05.707"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_ENTRAR}</arg>
+</arguments>
+<msg timestamp="20200831 00:45:05.708" level="INFO">Clicking element 'id:login-submit'.</msg>
+<status status="PASS" starttime="20200831 00:45:05.707" endtime="20200831 00:45:05.936"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:59.466" endtime="20200831 00:45:05.936"></status>
+</kw>
+<kw name="Então deve ser mostrada a mensagem &quot;Endereço de e-mail e/ou senha incorreta.&quot;" library="keywords">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${DIV_SENHA_ERRADA}</arg>
+<arg>${expect_message}</arg>
+</arguments>
+<status status="PASS" starttime="20200831 00:45:05.938" endtime="20200831 00:45:07.278"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20200831 00:45:12.280" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200831 00:45:07.278" endtime="20200831 00:45:12.280"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:45:05.938" endtime="20200831 00:45:12.281"></status>
+</kw>
+<kw name="Close Session" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200831 00:45:12.611" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-47.png"&gt;&lt;img src="selenium-screenshot-47.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200831 00:45:12.285" endtime="20200831 00:45:12.611"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200831 00:45:12.611" endtime="20200831 00:45:14.901"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:45:12.283" endtime="20200831 00:45:14.902"></status>
+</kw>
+<status status="PASS" starttime="20200831 00:44:48.977" endtime="20200831 00:45:14.903" critical="yes"></status>
+</test>
+<doc>Suite dos testes de login</doc>
+<status status="PASS" starttime="20200831 00:43:31.369" endtime="20200831 00:45:14.913"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Login-Usuario">Login-Usuario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
